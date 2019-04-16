@@ -1,0 +1,9 @@
+type Query {
+    persons: [Person]
+}
+
+type Person {
+    id: Int
+    firstName: String
+    lastName: String
+}
