@@ -1,0 +1,35 @@
+type Query {
+    articles: [Article]
+    authors: [Author]
+    blogs: [Blog]
+
+    authorDtl(id: Int!) : Author
+
+    searchArticleByRange(tsStart: Long!, tsEnd: Long!) : [Article]
+}
+
+type Article {
+    id: Int
+    title: String
+    content: String
+    blogId: Int
+
+    blog: Blog
+}
+
+type Author {
+    id: Int
+    name: String
+    gender: String
+    blogs: [Blog]
+
+    topArticles: [Article]
+}
+
+type Blog {
+    id: Int
+    name: String
+    authorId: Int
+
+    author: Author
+}
